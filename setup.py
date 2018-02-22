@@ -1,8 +1,12 @@
-from os.path import abspath, dirname, join, normpath
-
+import os
 from setuptools import setup
 
 requires = ['basicauth', 'aiohttp']
+
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname), encoding='utf-8').read()
+
 
 setup(
     # Basic package information:
@@ -23,10 +27,9 @@ setup(
     ],
 
     # Package dependencies:
-    test_suite="tests",
     requires=requires,
-    tests_require=requires,
-    setup_requires=requires,
+    tests_require=requires + ["pytest"],
+    setup_requires=requires + ["pytest-runner"],
     install_requires=requires,
 
     # Metadata for PyPI:
@@ -36,7 +39,5 @@ setup(
     url='https://github.com/bugov/aiohttp-basicauth-middleware',
     keywords='aiohttp security basicauth http middleware',
     description='An incredibly simple HTTP basic auth implementation for Aiohttp.',
-    long_description=open(
-        normpath(join(dirname(abspath(__file__)), 'README.md')), encoding='utf-8'
-    ).read()
+    long_description=read('README.md')
 )

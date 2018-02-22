@@ -1,5 +1,8 @@
 # aiohttp-basicauth-middleware
 
+[![Build Status](https://travis-ci.org/bugov/aiohttp-basicauth-middleware.svg?branch=master)](https://travis-ci.org/bugov/aiohttp-basicauth-middleware)
+
+
 Aiohttp middleware for simple http basic
 auth protection for some urls.
 
@@ -30,7 +33,7 @@ app.middlewares.append(
 1. list of protected urls. For example `['/admin']` will match
    with `/admin/user`, but will not match with `/user/admin`.
 2. auth dict – a dict with pairs: login-password.
-3. strategy for password comparision. For example you can
+3. strategy (optional) for password comparision. For example you can
    store hashed password in `auth_dict`.
 
 Example with md5 password hashing:
