@@ -8,6 +8,8 @@ auth protection for some urls.
 
 Works with Python >= 3.5.
 
+Works with UTF-8 🖖
+
 ## Installation
 
     pip install aiohttp-basicauth-middleware

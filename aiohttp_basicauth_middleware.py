@@ -2,16 +2,17 @@ import logging
 from typing import Callable, Coroutine, Iterable
 
 from aiohttp import web
-from basicauth import decode, DecodeError
+from http_basic_auth import parse_header, BasicAuthException
 
+__version__ = '1.0.0'
 
 log = logging.getLogger(__name__)
 
 
 def check_access(auth_dict: dict, header_value: str, strategy: Callable = lambda x: x) -> bool:
     try:
-        login, password = decode(header_value)
-    except DecodeError:
+        login, password = parse_header(header_value)
+    except BasicAuthException:
         return False
 
     hashed_password = auth_dict.get(login)

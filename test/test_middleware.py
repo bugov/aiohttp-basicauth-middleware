@@ -1,8 +1,5 @@
 import hashlib
-import sys
-from basicauth import encode
-
-sys.path.append('.')
+from http_basic_auth import generate_header
 
 from example.server import get_app
 
@@ -29,7 +26,7 @@ async def test_fail_auth_wrong(aiohttp_server, aiohttp_client, loop):
 
     response = await client.get(
         '/admin/hello',
-        headers={'Authorization': encode('test', 'WRONG')},
+        headers={'Authorization': generate_header('test', 'WRONG')},
     )
     assert response.status == 401
 
@@ -40,7 +37,7 @@ async def test_ok_auth(aiohttp_server, aiohttp_client, loop):
 
     response = await client.get(
         '/admin/hello',
-        headers={'Authorization': encode('test', 'secret')},
+        headers={'Authorization': generate_header('test', 'secret')},
     )
     assert response.status == 200
 
@@ -59,6 +56,6 @@ async def test_strategy(aiohttp_server, aiohttp_client, loop):
 
     response = await client.get(
         '/admin/hello',
-        headers={'Authorization': encode('test', 'password')},
+        headers={'Authorization': generate_header('test', 'password')},
     )
     assert response.status == 200
