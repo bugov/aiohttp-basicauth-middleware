@@ -4,7 +4,7 @@ from typing import Callable, Coroutine, Iterable
 from aiohttp import web
 from http_basic_auth import parse_header, BasicAuthException
 
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 
 log = logging.getLogger(__name__)
 
