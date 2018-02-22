@@ -1,4 +1,5 @@
 /.*
 !.gitignore
+!.travis.yml
 __pycache__
 *.egg-info
