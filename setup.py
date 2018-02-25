@@ -11,7 +11,7 @@ def read(fname):
 setup(
     # Basic package information:
     name='aiohttp-basicauth-middleware',
-    version='1.0.1',
+    version='1.0.2',
     py_modules=('aiohttp_basicauth_middleware',),
 
     # Packaging options:
