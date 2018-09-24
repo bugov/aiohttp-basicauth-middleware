@@ -1,6 +1,8 @@
 import os
 from setuptools import setup
 
+from aiohttp_basicauth_middleware import __version__
+
 requires = ['http_basic_auth', 'aiohttp']
 
 
@@ -11,7 +13,7 @@ def read(fname):
 setup(
     # Basic package information:
     name='aiohttp-basicauth-middleware',
-    version='1.0.2',
+    version=__version__,
     py_modules=('aiohttp_basicauth_middleware',),
 
     # Packaging options:
