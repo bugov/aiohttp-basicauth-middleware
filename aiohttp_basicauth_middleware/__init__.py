@@ -1,5 +1,19 @@
 import logging
-from typing import Callable, Coroutine, Iterable
+from typing import Callable, Iterable
+
+from typing import Any, TYPE_CHECKING
+try:
+    from typing import Coroutine
+except ImportError:
+    class _Coroutine:
+        # Fake, so you can do Coroutine[foo, bar, baz]
+        # You could assert the proper number of items are in the slice,
+        # but that seems like overkill, given that mypy will check this
+        # and at runtime you probably no longer care
+        def __getitem__(self, index: Any) -> None:
+            pass
+    if not TYPE_CHECKING:
+        Coroutine = _Coroutine()
 
 from aiohttp import web
 from http_basic_auth import parse_header, BasicAuthException
