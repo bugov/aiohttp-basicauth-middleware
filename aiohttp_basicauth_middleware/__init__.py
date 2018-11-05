@@ -48,6 +48,9 @@ def check_access(auth_dict: dict, header_value: str, strategy: Callable = lambda
 def basic_auth_middleware(urls: Iterable, auth_dict: dict, strategy: Callable = lambda x: x) -> Coroutine:
     async def factory(app, handler):
         async def middleware(request):
+            if request.method == 'OPTIONS':
+                return await handler(request)
+            
             for url in urls:
                 if not request.path.startswith(url):
                     continue
