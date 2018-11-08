@@ -14,10 +14,6 @@ Works with UTF-8 🖖
 
     pip install aiohttp-basicauth-middleware
 
-# Deprecated:
-
-til 1.*.*w
-
 ## Usage
 
 ```python
@@ -40,7 +36,8 @@ app.middlewares.append(
    with `/admin/user`, but will not match with `/user/admin`.
 2. auth dict – a dict with pairs: login-password.
 3. strategy (optional) for password comparision. For example you can
-   store hashed password in `auth_dict`.
+   store hashed password in `auth_dict`. See `aiohttp_basicauth_middleware.strategy.BaseStrategy` and
+   `example.strategy` for more information.
 
 Example with md5 password hashing:
 
