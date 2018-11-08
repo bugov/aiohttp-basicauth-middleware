@@ -36,9 +36,7 @@ class BaseStrategy:
     async def check(self) -> web.Response:
 
         if await self.password_test():
-            if asyncio.iscoroutinefunction(self.handler):
-                return await self.handler(self.request)
-            return self.handler(self.request)
+            return await self.handler(self.request)
 
         self.on_error()
 

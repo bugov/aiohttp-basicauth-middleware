@@ -16,12 +16,17 @@ def hello(request):
     return web.Response(text='Hello')
 
 
+async def world(request):
+    return web.Response(text='world')
+
+
 def get_app(loop, auth_dict=None):
     if auth_dict is None:
         auth_dict = {}
 
     app = web.Application(loop=loop)
     app.router.add_route('*', '/admin/hello', hello)
+    app.router.add_route('*', '/admin/world', world)
 
     app.middlewares.append(
         basic_auth_middleware(('/admin',), auth_dict, SkipOptionsStrategy)
