@@ -14,6 +14,10 @@ Works with UTF-8 🖖
 
     pip install aiohttp-basicauth-middleware
 
+# Deprecated:
+
+til 1.*.*w
+
 ## Usage
 
 ```python
