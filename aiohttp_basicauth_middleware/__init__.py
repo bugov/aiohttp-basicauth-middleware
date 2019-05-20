@@ -27,7 +27,7 @@ from aiohttp import web
 from http_basic_auth import parse_header, BasicAuthException
 from aiohttp_basicauth_middleware.strategy import BaseStrategy
 
-__version__ = '1.1.0'
+__version__ = '1.1.1'
 
 log = logging.getLogger(__name__)
 
@@ -56,7 +56,7 @@ def check_access(
 def basic_auth_middleware(
     urls: Iterable,
     auth_dict: dict,
-    strategy: Type[BaseStrategy]
+    strategy: Type[BaseStrategy] = lambda x: x
 ) -> Coroutine:
     async def factory(app, handler) -> Coroutine:
         async def middleware(request) -> web.Response:
