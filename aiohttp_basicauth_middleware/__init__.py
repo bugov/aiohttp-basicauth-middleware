@@ -27,7 +27,6 @@ from aiohttp import web
 from http_basic_auth import parse_header, BasicAuthException
 from aiohttp_basicauth_middleware.strategy import BaseStrategy
 
-__version__ = '1.1.1'
 
 log = logging.getLogger(__name__)
 
