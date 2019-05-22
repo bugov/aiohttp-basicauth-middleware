@@ -24,7 +24,7 @@ Usage
 .. code:: python
 
     app = web.Application(loop=loop)
-    
+
     app.router.add_route('GET', '/hello', handler_a)
     app.router.add_route('GET', '/admin/hello', handler_b)
 
