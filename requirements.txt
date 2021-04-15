@@ -1,2 +1,4 @@
 aiohttp>=3.0.1
 http_basic_auth>=1.2.0
+wheel
+
