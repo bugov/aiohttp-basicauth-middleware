@@ -2,7 +2,7 @@ import os
 from setuptools import setup
 
 
-requires = ['http_basic_auth', 'aiohttp']
+requires = ['wheel', 'http_basic_auth', 'aiohttp']
 
 
 def read(fname):
@@ -12,7 +12,7 @@ def read(fname):
 setup(
     # Basic package information:
     name='aiohttp-basicauth-middleware',
-    version='1.1.2',
+    version='1.1.3',
     py_modules=('aiohttp_basicauth_middleware',),
 
     # Packaging options:
@@ -21,12 +21,15 @@ setup(
     packages=('aiohttp_basicauth_middleware',),
 
     classifiers=[
-        'License :: Public Domain',
+        'License :: OSI Approved :: BSD License',
+        'Intended Audience :: Developers',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
     ],
 
     # Package dependencies:
