@@ -7,7 +7,7 @@ aiohttp-basicauth-middleware
 Aiohttp middleware for simple http basic
 auth protection for some urls.
 
-Works with Python >= 3.5.
+Works with Python >= 3.6.
 
 Works with UTF-8 🖖
 
