@@ -1,4 +1,4 @@
-aiohttp==3.6.*; python_version < '3.7.0'
+aiohttp==3.7.4; python_version < '3.7.0'
 aiohttp>=3.8.0; python_version >= '3.7.0'
 http_basic_auth>=1.2.0
 wheel
