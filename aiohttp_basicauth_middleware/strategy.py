@@ -1,4 +1,3 @@
-import asyncio
 from typing import Callable, Tuple
 import logging
 
@@ -34,7 +33,6 @@ class BaseStrategy:
         return True
 
     async def check(self) -> web.Response:
-
         if await self.password_test():
             return await self.handler(self.request)
 

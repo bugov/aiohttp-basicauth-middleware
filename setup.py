@@ -12,7 +12,7 @@ def read(fname):
 setup(
     # Basic package information:
     name='aiohttp-basicauth-middleware',
-    version='1.1.3',
+    version='1.2.0',
     py_modules=('aiohttp_basicauth_middleware',),
 
     # Packaging options:
@@ -25,11 +25,11 @@ setup(
         'Intended Audience :: Developers',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
 
     # Package dependencies:
