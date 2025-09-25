@@ -3,7 +3,7 @@ from aiohttp import web
 from aiohttp_basicauth_middleware import basic_auth_middleware
 from http_basic_auth import generate_header
 
-from example.strategy import get_app
+from test.example.strategy import get_app
 
 
 async def test_skip_options_check(aiohttp_server, aiohttp_client, loop):

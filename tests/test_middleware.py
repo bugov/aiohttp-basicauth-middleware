@@ -1,7 +1,7 @@
 import hashlib
 from http_basic_auth import generate_header
 
-from example.server import get_app
+from test.example.server import get_app
 
 
 async def test_no_auth_ok_url(aiohttp_server, aiohttp_client, loop):

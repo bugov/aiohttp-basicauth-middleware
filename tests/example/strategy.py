@@ -1,7 +1,7 @@
 import asyncio
 from aiohttp import web
 from aiohttp_basicauth_middleware import basic_auth_middleware
-from aiohttp_basicauth_middleware.strategy import BaseStrategy
+from aiohttp_basicauth_middleware import BaseStrategy
 
 
 class SkipOptionsStrategy(BaseStrategy):

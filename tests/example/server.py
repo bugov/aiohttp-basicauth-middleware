@@ -3,7 +3,7 @@ from aiohttp import web
 from aiohttp_basicauth_middleware import basic_auth_middleware
 
 
-def hello(request):
+async def hello(request):
     return web.Response(text='Hello')
 
 
