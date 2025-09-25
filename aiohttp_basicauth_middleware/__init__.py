@@ -39,7 +39,7 @@ def check_access(
 def basic_auth_middleware(
     urls: Iterable,
     auth_dict: dict,
-    strategy: Type[BaseStrategy] = lambda x: x
+    strategy: Type[BaseStrategy] | Callable = lambda x: x
 ) -> Coroutine:
     async def factory(app, handler) -> Coroutine:
         async def middleware(request) -> web.Response:
